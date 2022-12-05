@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang ="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Estilizando Formulario Para Inserir Pessoa</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    header{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding:20px;
+      background-color: violet;
+      color:white;
+      font-family: Sans-serif;
+    }
+    section{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height:80vh;  
+    }
+    form div{
+      display:flex;
+      flex-direction:column;
+      margin-bottom: 20px;
+    }
+    form input, form text{
+      outline: unset;
+      padding:20px;
+      width: 300px;
+      border-radius: 10px;
+      border: 1px solid violet;   
+    }
+    form input:focus, form textarea:focus{
+      background-color: wheat;
+    }
+    form input[type=submit]{
+      background-color: violet;
+      color:white;
+      cursor: pointer;
+    }
+    
+  </style>
+
+</head>
+
+<body>
+  <form action = "{{ url_for('novapessoa') }}" method = "POST">
+  <header>
+    <h1>Formulario</h1>
+  </header>
+  <selection>
+    <form>
+      <div>
+        <label>Nome</label>
+        <input type="text" placeholder="Digite seu Nome" name="nome" required/>
+      </div>
+      
+      <div>
+        <label>Sobrenome</label>
+        <input type="text" placeholder="Digite seu Sobrenome" name="sobrenome" 
+       required/>
+      </div>
+      <div>
+        <label>CPF</label>
+        <input type="text" placeholder="Digite o CPF" name="cpf" 
+       required/>
+      </div> 
+      <div>
+        <label>Email</label>
+        <input type="text" placeholder="Digite o Email" name="email" 
+       required/>
+      </div> 
+      <div>
+        <input type="submit" value="Inserir">
+      </div>
+    </form>
+  </selection>
+
+</body>
+
+</html>
